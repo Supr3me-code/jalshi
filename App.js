@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <>
-      <StatusBar style="dark" />
+      <StatusBar style="dark"/>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Jalshi" component={Home}></Stack.Screen>
