@@ -25,6 +25,18 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e23bbbc7-556d-430f-a230-8d01360bfcbf"
+      }
+    },
+    "owner": "supr3me-code",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/e23bbbc7-556d-430f-a230-8d01360bfcbf"
     }
   }
 }
