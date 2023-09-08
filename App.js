@@ -15,9 +15,10 @@ const AppOverview = () => {
       screenOptions={{
         headerStyle: { backgroundColor: "#090945" },
         headerTintColor: "white",
-        tabBarStyle: { backgroundColor: "#db5dce" },
-        tabBarActiveTintColor: "white",
+        tabBarStyle: { backgroundColor: "#db5dce", borderTopWidth: 0 },
+        tabBarActiveTintColor: "#090945",
         tabBarInactiveTintColor: "white",
+        headerShadowVisible: false,
       }}
     >
       <BottomTabs.Screen
@@ -27,7 +28,7 @@ const AppOverview = () => {
           title: "Jalshi",
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home" size={size} color={"white"} />
+            <Ionicons name="home" size={size} color={color} />
           ),
         }}
       />
@@ -38,7 +39,7 @@ const AppOverview = () => {
           title: "Events",
           tabBarLabel: "Events",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="calendar" size={size} color={"white"} />
+            <Ionicons name="calendar" size={size} color={color} />
           ),
         }}
       />

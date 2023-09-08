@@ -1,11 +1,20 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 const Home = () => {
   return (
-    <View>
-      <Text>Home Screen</Text>
-    </View>
+    <LinearGradient colors={["#090945", "#db5dce"]} style={styles.container}>
+      <View>
+        <Text></Text>
+      </View>
+    </LinearGradient>
   );
 };
 
 export default Home;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
