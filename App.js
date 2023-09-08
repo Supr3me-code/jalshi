@@ -5,6 +5,8 @@ import Home from "./screens/Home";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Events from "./screens/Events";
 import { Ionicons } from "@expo/vector-icons";
+import { Image, StyleSheet, View } from "react-native";
+import HeaderImage from "./modules/HeaderImage";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -25,7 +27,7 @@ const AppOverview = () => {
         name="Home"
         component={Home}
         options={{
-          title: "Jalshi",
+          headerTitle: () => <HeaderImage />,
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" size={size} color={color} />
