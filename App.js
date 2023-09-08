@@ -11,15 +11,23 @@ const BottomTabs = createBottomTabNavigator();
 
 const AppOverview = () => {
   return (
-    <BottomTabs.Navigator>
+    <BottomTabs.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: "#090945" },
+        headerTintColor: "white",
+        tabBarStyle: { backgroundColor: "#db5dce" },
+        tabBarActiveTintColor: "white",
+        tabBarInactiveTintColor: "white",
+      }}
+    >
       <BottomTabs.Screen
         name="Home"
         component={Home}
         options={{
           title: "Jalshi",
-          tabBarLabel: "Jalshi",
+          tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home" size={size} color={color} />
+            <Ionicons name="home" size={size} color={"white"} />
           ),
         }}
       />
@@ -30,7 +38,7 @@ const AppOverview = () => {
           title: "Events",
           tabBarLabel: "Events",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="calendar" size={size} color={color} />
+            <Ionicons name="calendar" size={size} color={"white"} />
           ),
         }}
       />
@@ -41,7 +49,7 @@ const AppOverview = () => {
 export default function App() {
   return (
     <>
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
