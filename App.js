@@ -5,8 +5,8 @@ import Home from "./screens/Home";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Events from "./screens/Events";
 import { Ionicons } from "@expo/vector-icons";
-import { Image, StyleSheet, View } from "react-native";
-import HeaderImage from "./modules/HeaderImage";
+import Header from "./modules/Header";
+import { useFonts } from "expo-font";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -27,7 +27,7 @@ const AppOverview = () => {
         name="Home"
         component={Home}
         options={{
-          headerTitle: () => <HeaderImage />,
+          headerTitle: () => <Header isHome={true}/>,
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" size={size} color={color} />
@@ -38,7 +38,7 @@ const AppOverview = () => {
         name="Events"
         component={Events}
         options={{
-          title: "Events",
+          headerTitle: () => <Header title={'Events'}/>,
           tabBarLabel: "Events",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="calendar" size={size} color={color} />
@@ -50,6 +50,12 @@ const AppOverview = () => {
 };
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    "kalam-regular": require("./assets/fonts/Kalam-Regular.ttf"),
+    "kalam-bold": require("./assets/fonts/Kalam-Bold.ttf"),
+    "kalam-light": require("./assets/fonts/Kalam-Light.ttf"),
+  });
+
   return (
     <>
       <StatusBar style="light" />
