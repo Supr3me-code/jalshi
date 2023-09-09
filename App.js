@@ -7,6 +7,7 @@ import Events from "./screens/Events";
 import { Ionicons } from "@expo/vector-icons";
 import Header from "./modules/Header";
 import { useFonts } from "expo-font";
+import EventDetails from "./screens/EventDetails";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -27,7 +28,7 @@ const AppOverview = () => {
         name="Home"
         component={Home}
         options={{
-          headerTitle: () => <Header isHome={true}/>,
+          headerTitle: () => <Header isHome={true} />,
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" size={size} color={color} />
@@ -38,7 +39,7 @@ const AppOverview = () => {
         name="Events"
         component={Events}
         options={{
-          headerTitle: () => <Header title={'Events'}/>,
+          headerTitle: () => <Header title={"Events"} />,
           tabBarLabel: "Events",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="calendar" size={size} color={color} />
@@ -68,6 +69,13 @@ export default function App() {
               headerShown: false,
             }}
           ></Stack.Screen>
+          <Stack.Screen
+            name="EventDetails"
+            component={EventDetails}
+            options={{
+              presentation: "modal",
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>

@@ -1,9 +1,14 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const EventCard = ({ title, time, location, imageSource, onPress }) => {
+const EventCard = ({ title, time, location, imageSource }) => {
+  const navigation = useNavigation();
+  function onPressHandler() {
+    navigation.navigate("EventDetails");
+  }
   return (
-    <Pressable onPress={onPress}>
+    <Pressable onPress={onPressHandler}>
       <View style={styles.card}>
         <Image source={{ uri: imageSource }} style={styles.image} />
         <View style={styles.details}>
@@ -22,13 +27,13 @@ const EventCard = ({ title, time, location, imageSource, onPress }) => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: "white",
+    backgroundColor: "#ffffff",
     borderRadius: 8,
     overflow: "hidden",
     elevation: 2,
-    opacity: 0.5,
+    // opacity: 0.5,
     marginHorizontal: 10,
-    marginTop: 15
+    marginTop: 15,
   },
   image: {
     height: 150,
