@@ -12,7 +12,7 @@ const EventCard = ({ title, imageUrl, onPress }) => {
       <View style={styles.card}>
         <ImageBackground source={{ uri: imageUrl }} style={styles.image}>
           <View style={styles.titleContainer}>
-            <Text style={[styles.title, styles.font]}>
+            <Text style={styles.title}>
               {title.toUpperCase()}
             </Text>
           </View>
@@ -45,9 +45,9 @@ const styles = StyleSheet.create({
     opacity: 0.7,
   },
   title: {
-    fontSize: 24,
+    fontSize: 25,
     fontWeight: "bold",
-    fontFamily: "kalam-bold",
+    fontFamily: "samaro",
   },
   pressed: {
     opacity: 0.7,

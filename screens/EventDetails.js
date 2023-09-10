@@ -10,7 +10,11 @@ const EventDetails = ({ route, navigation }) => {
   const eventData = data.find((item) => item.id === eventId);
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: eventData.title,
+      headerTitle: () => (
+        <Text style={{ fontFamily: "samaro", fontSize: 24 }}>
+          {eventData.title}
+        </Text>
+      ),
     });
   });
   return (

@@ -58,6 +58,8 @@ export default function App() {
     "kalam-regular": require("./assets/fonts/Kalam-Regular.ttf"),
     "kalam-bold": require("./assets/fonts/Kalam-Bold.ttf"),
     "kalam-light": require("./assets/fonts/Kalam-Light.ttf"),
+    "samarn": require("./assets/fonts/samarn.ttf"),
+    "samaro": require("./assets/fonts/samaro.ttf"),
   });
 
   return (

@@ -1,6 +1,6 @@
 import { View, Image, StyleSheet, Text } from "react-native";
 
-const Header = ({ isHome, title }) => {
+const Header = ({ isHome = false, title }) => {
   return (
     <View>
       {isHome && (
@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
     width: 200,
   },
   title: {
-    fontFamily: "kalam-regular",
+    fontFamily: "samaro",
     color: "white",
-    fontSize: 30,
+    fontSize: 35,
   },
 });
