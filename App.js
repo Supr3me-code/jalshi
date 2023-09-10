@@ -8,9 +8,12 @@ import { Ionicons } from "@expo/vector-icons";
 import Header from "./modules/Header";
 import { useFonts } from "expo-font";
 import EventDetails from "./screens/EventDetails";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
+
+const queryClient = new QueryClient();
 
 const AppOverview = () => {
   return (
@@ -60,24 +63,26 @@ export default function App() {
   return (
     <>
       <StatusBar style="light" />
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name="Jalshi"
-            component={AppOverview}
-            options={{
-              headerShown: false,
-            }}
-          ></Stack.Screen>
-          <Stack.Screen
-            name="EventDetails"
-            component={EventDetails}
-            options={{
-              presentation: "modal",
-            }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <QueryClientProvider client={queryClient}>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+              name="Jalshi"
+              component={AppOverview}
+              options={{
+                headerShown: false,
+              }}
+            ></Stack.Screen>
+            <Stack.Screen
+              name="EventDetails"
+              component={EventDetails}
+              options={{
+                presentation: "modal",
+              }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </QueryClientProvider>
     </>
   );
 }

@@ -31,8 +31,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     overflow: "hidden",
     elevation: 2,
-    // opacity: 0.5,
-    marginHorizontal: 10,
+    marginHorizontal: 20,
     marginTop: 15,
   },
   image: {
