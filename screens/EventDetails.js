@@ -2,6 +2,7 @@ import { useQuery } from "react-query";
 import { fetchEvents } from "../util/http";
 import { useLayoutEffect } from "react";
 import { Image, ScrollView, StyleSheet, View, Text } from "react-native";
+import IconText from "../elements/IconText";
 
 const EventDetails = ({ route, navigation }) => {
   const { data, error, isLoading } = useQuery("events", fetchEvents);
@@ -15,11 +16,14 @@ const EventDetails = ({ route, navigation }) => {
   return (
     <ScrollView style={styles.rootContainer}>
       <Image style={styles.image} source={{ uri: eventData.imageUrl }} />
-      <Text style={styles.title}>{eventData.title}</Text>
+      {/* <Text style={styles.title}>{eventData.title}</Text> */}
       <View style={styles.details}>
-        <Text style={styles.detailItem}>{eventData.time}</Text>
-        <Text style={styles.detailItem}>{eventData.date}</Text>
-        <Text style={styles.detailItem}>{eventData.location}</Text>
+        <IconText icon={"calendar"} text={eventData.date} />
+        <IconText icon={"time"} text={eventData.time} />
+        <IconText icon={"location"} text={eventData.location} />
+      </View>
+      <View style={styles.description}>
+        <Text>{eventData.description}</Text>
       </View>
     </ScrollView>
   );
@@ -43,13 +47,24 @@ const styles = StyleSheet.create({
     color: "black",
   },
   details: {
-    flexDirection: "row",
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     padding: 8,
+    alignItems: "flex-start",
+    margin: 10,
+    borderBottomWidth: 1,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
   },
   detailItem: {
-    marginHorizontal: 4,
-    fontSize: 12,
+    flexDirection: "row",
+    marginBottom: 10,
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  description: {
+    marginVertical: 10,
+    marginHorizontal: 25,
   },
 });
