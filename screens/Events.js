@@ -1,11 +1,16 @@
 import { StyleSheet, ScrollView, Text } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import EventCard from "../modules/EventCard";
+import EventCard from "../elements/EventCard";
 import { useQuery } from "react-query";
 import { fetchEvents } from "../util/http";
+import EventsList from "../modules/EventsList";
 
-const Events = () => {
+const Events = ({ navigation }) => {
   const { data, error, isLoading } = useQuery("events", fetchEvents);
+
+  const onEventCardPress = () => {
+    navigation.navigate("EventDetails");
+  };
 
   {
     isLoading && (
@@ -25,20 +30,7 @@ const Events = () => {
 
   return (
     <LinearGradient colors={["#090945", "#db5dce"]} style={styles.container}>
-      <ScrollView>
-        {data &&
-          data.map((event) => {
-            console.log(event, "EVENT");
-            return (
-              <EventCard
-                imageSource={event.imageUrl}
-                title={event.title}
-                time={event.time}
-                location={event.location}
-              />
-            );
-          })}
-      </ScrollView>
+      <EventsList events={data} />
     </LinearGradient>
   );
 };
