@@ -62,13 +62,13 @@ const MessageForm = ({ onPress }) => {
       {msgError ? <Text style={styles.errorText}>{msgError}</Text> : null}
       <View style={styles.buttonsContainer}>
         <View style={styles.buttonContainer}>
-          <Pressable style={styles.iconButton} onPress={onSubmitHandler}>
-            <Text style={styles.icon}>Submit</Text>
+          <Pressable style={[styles.iconButton, styles.redButton]} onPress={onPress}>
+            <Text style={styles.icon}>Close</Text>
           </Pressable>
         </View>
         <View style={styles.buttonContainer}>
-          <Pressable style={styles.iconButton} onPress={onPress}>
-            <Text style={styles.icon}>Close</Text>
+          <Pressable style={styles.iconButton} onPress={onSubmitHandler}>
+            <Text style={styles.icon}>Submit</Text>
           </Pressable>
         </View>
       </View>
@@ -80,6 +80,9 @@ const styles = StyleSheet.create({
   errorText: {
     color: "red",
     marginBottom: 10,
+  },
+  redButton: {
+    backgroundColor: '#ff474c'
   },
   buttonsContainer: {
     flexDirection: "row",
