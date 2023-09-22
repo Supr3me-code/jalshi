@@ -8,37 +8,38 @@ const MessageForm = ({ onPress }) => {
 
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
-  const [nameError, setNameError] = useState("");
-  const [msgError, setMsgError] = useState("");
+  const [nameError, setNameError] = useState(null);
+  const [msgError, setMsgError] = useState(null);
 
   const handleValidation = () => {
     if (name.trim() === "") {
       setNameError("Please enter your name");
     } else {
-      setNameError("");
+      setNameError(null);
     }
 
     if (message.trim() === "") {
       setMsgError("Please enter your message");
     } else {
-      setMsgError("");
+      setMsgError(null);
     }
   };
 
   const onSubmitHandler = async () => {
     handleValidation();
-    if (nameError || msgError) return;
 
     const messageData = {
       name: name,
       message: message,
     };
-
-    try {
-      await mutate(messageData);
-      onPress();
-    } catch (error) {
-      console.error("Error creating message:", error);
+    
+    if (!!name && !!message) {
+      try {
+        await mutate(messageData);
+        onPress();
+      } catch (error) {
+        console.error("Error creating message:", error);
+      }
     }
   };
 
