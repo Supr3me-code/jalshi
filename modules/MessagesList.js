@@ -1,7 +1,9 @@
 import { FlatList } from "react-native";
 import MessageCard from "../elements/MessageCard";
+import { useNavigation } from "@react-navigation/native";
+import PopupCard from "./PopupCard";
 
-const MessagesList = ({ messages }) => {
+const MessagesList = ({ messages }) => {  
   const renderMessageCard = (itemData) => {
     const item = itemData.item;
     const messageCardProps = {
@@ -12,11 +14,14 @@ const MessagesList = ({ messages }) => {
   };
 
   return (
-    <FlatList
-      data={messages}
-      keyExtractor={(message) => message.id}
-      renderItem={renderMessageCard}
-    />
+    <>
+      <FlatList
+        data={messages}
+        keyExtractor={(message) => message.id}
+        renderItem={renderMessageCard}
+      />
+      <PopupCard />
+    </>
   );
 };
 

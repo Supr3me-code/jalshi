@@ -12,6 +12,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import MessageWall from "./screens/MessageWall";
 import Info from "./screens/Info";
 import InfoDetails from "./screens/InfoDetails";
+import AddMessage from "./screens/AddMessage";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -70,7 +71,11 @@ const AppOverview = () => {
           headerTitle: () => <Header title={"Information"} />,
           tabBarLabel: "Info",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="information-circle-outline" size={size} color={color} />
+            <Ionicons
+              name="information-circle-outline"
+              size={size}
+              color={color}
+            />
           ),
         }}
       />
@@ -116,9 +121,10 @@ export default function App() {
             />
             <Stack.Screen
               name="AddMessage"
-              component={EventDetails}
+              component={AddMessage}
               options={{
-                presentation: "modal",
+                headerShown: false,
+                presentation: 'modal',
               }}
             />
           </Stack.Navigator>

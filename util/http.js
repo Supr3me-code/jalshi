@@ -54,3 +54,15 @@ export const fetchInfo = async () => {
   }
   return info;
 };
+
+export const AddMessage = async (messageData) => {
+  try {
+    const response = await axios.post(
+      `${BACKEND_URL}/messages.json`,
+      messageData
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
