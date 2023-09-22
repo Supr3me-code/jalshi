@@ -15,6 +15,7 @@ const MessageWall = () => {
         id: key,
         ...fbData[key],
       }));
+      messages.reverse();
       setData(messages);
     });
   }, []);
