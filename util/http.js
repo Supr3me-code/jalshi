@@ -22,3 +22,19 @@ export const fetchEvents = async () => {
   }
   return events;
 };
+
+export const fetchMessages = async () => {
+  const response = await axios.get(`${BACKEND_URL}/messages.json`);
+
+  const messages = [];
+
+  for (const key in response.data) {
+    const messageObj = {
+      id: key,
+      name: response.data[key].name,
+      message: response.data[key].message,
+    };
+    messages.push(messageObj);
+  }
+  return messages;
+};

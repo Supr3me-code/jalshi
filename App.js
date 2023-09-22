@@ -9,6 +9,7 @@ import Header from "./modules/Header";
 import { useFonts } from "expo-font";
 import EventDetails from "./screens/EventDetails";
 import { QueryClient, QueryClientProvider } from "react-query";
+import MessageWall from "./screens/MessageWall";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -49,6 +50,17 @@ const AppOverview = () => {
           ),
         }}
       />
+      <BottomTabs.Screen
+        name="MessageWall"
+        component={MessageWall}
+        options={{
+          headerTitle: () => <Header title={"Message Wall"} />,
+          tabBarLabel: "Messages",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="chatbubbles" size={size} color={color} />
+          ),
+        }}
+      />
     </BottomTabs.Navigator>
   );
 };
@@ -58,8 +70,8 @@ export default function App() {
     "kalam-regular": require("./assets/fonts/Kalam-Regular.ttf"),
     "kalam-bold": require("./assets/fonts/Kalam-Bold.ttf"),
     "kalam-light": require("./assets/fonts/Kalam-Light.ttf"),
-    "samarn": require("./assets/fonts/samarn.ttf"),
-    "samaro": require("./assets/fonts/samaro.ttf"),
+    samarn: require("./assets/fonts/samarn.ttf"),
+    samaro: require("./assets/fonts/samaro.ttf"),
   });
 
   return (

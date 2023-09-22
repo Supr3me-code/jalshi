@@ -1,12 +1,11 @@
-import { StyleSheet, ScrollView, Text } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import EventCard from "../elements/EventCard";
+import { StyleSheet, Text } from "react-native";
+import { fetchMessages } from "../util/http";
+import MessagesList from "../modules/MessagesList";
 import { useQuery } from "react-query";
-import { fetchEvents } from "../util/http";
-import EventsList from "../modules/EventsList";
 
-const Events = () => {
-  const { data, error, isLoading } = useQuery("events", fetchEvents);
+const MessageWall = () => {
+  const { data, error, isLoading } = useQuery("messages", fetchMessages);
 
   {
     isLoading && (
@@ -26,12 +25,12 @@ const Events = () => {
 
   return (
     <LinearGradient colors={["#090945", "#db5dce"]} style={styles.container}>
-      <EventsList events={data} />
+      <MessagesList messages={data} />
     </LinearGradient>
   );
 };
 
-export default Events;
+export default MessageWall;
 
 const styles = StyleSheet.create({
   container: {
