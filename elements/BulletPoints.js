@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   },
   pointText: {
     fontSize: 16,
-    fontFamily: "samarn",
+    // fontFamily: "samarn",
   },
 });
 
