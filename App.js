@@ -124,7 +124,7 @@ export default function App() {
               component={AddMessage}
               options={{
                 headerShown: false,
-                presentation: 'modal',
+                presentation: "modal",
               }}
             />
           </Stack.Navigator>

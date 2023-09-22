@@ -15,12 +15,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 10,
     padding: 16,
-    margin: 16,
+    marginVertical: 6,
+    marginHorizontal: 10,
     flexDirection: "column-reverse",
   },
   message: {
     fontSize: 16,
-    marginBottom: 8,
+    marginBottom: 4,
   },
   name: {
     fontSize: 12,
