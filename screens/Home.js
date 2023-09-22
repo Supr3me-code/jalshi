@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <LinearGradient colors={["#090945", "#db5dce"]} style={styles.container}>
       <View>
-        <Image style={styles.cari} source={require('../assets/jalshi-cari.png')}/>
+        {/* <Image style={styles.cari} source={require('../assets/jalshi-cari.png')}/> */}
       </View>
     </LinearGradient>
   );

@@ -32,7 +32,7 @@ const MessageForm = ({ onPress }) => {
       name: name,
       message: message,
     };
-    
+
     if (!!name && !!message) {
       try {
         await mutate(messageData);
@@ -58,7 +58,6 @@ const MessageForm = ({ onPress }) => {
         placeholder="Message"
         value={message}
         onChangeText={(text) => setMessage(text)}
-        multiline
       />
       {msgError ? <Text style={styles.errorText}>{msgError}</Text> : null}
       <View style={styles.buttonsContainer}>
