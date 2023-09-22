@@ -6,13 +6,15 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Events from "./screens/Events";
 import { Ionicons } from "@expo/vector-icons";
 import Header from "./modules/Header";
-import { useFonts } from "expo-font";
+import * as Font from "expo-font";
 import EventDetails from "./screens/EventDetails";
 import { QueryClient, QueryClientProvider } from "react-query";
 import MessageWall from "./screens/MessageWall";
 import Info from "./screens/Info";
 import InfoDetails from "./screens/InfoDetails";
 import AddMessage from "./screens/AddMessage";
+import { useEffect, useState } from "react";
+import { Text, View } from "react-native";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -83,14 +85,24 @@ const AppOverview = () => {
   );
 };
 
-export default function App() {
-  const [fontsLoaded] = useFonts({
-    "kalam-regular": require("./assets/fonts/Kalam-Regular.ttf"),
-    "kalam-bold": require("./assets/fonts/Kalam-Bold.ttf"),
-    "kalam-light": require("./assets/fonts/Kalam-Light.ttf"),
-    samarn: require("./assets/fonts/samarn.ttf"),
-    samaro: require("./assets/fonts/samaro.ttf"),
-  });
+export default App = () => {
+  const [fontLoaded, setFontLoaded] = useState(false);
+
+  useEffect(() => {
+    async function loadFonts() {
+      await Font.loadAsync({
+        'samaro': require('./assets/fonts/samaro.ttf'), // Adjust the path accordingly
+        'samarn': require('./assets/fonts/samarn.ttf'), // Adjust the path accordingly
+      });
+      setFontLoaded(true);
+    }
+
+    loadFonts();
+  }, []);
+
+  if (!fontLoaded) {
+    return <View><Text>Loading fonts...</Text></View>;
+  }
 
   return (
     <>
@@ -132,4 +144,4 @@ export default function App() {
       </QueryClientProvider>
     </>
   );
-}
+};

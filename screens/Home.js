@@ -53,14 +53,12 @@ const styles = StyleSheet.create({
   imgContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    // backgroundColor: 'red',
     padding: 0,
     marginTop: 10,
   },
   placeholder: {
     height: 200,
     paddingTop: 20,
-    // backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",
   },
@@ -77,6 +75,5 @@ const styles = StyleSheet.create({
     height: 300,
     padding: 0,
     resizeMode: "contain",
-    // backgroundColor: 'yellow'
   },
 });
