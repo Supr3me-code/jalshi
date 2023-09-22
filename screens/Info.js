@@ -1,11 +1,11 @@
-import { StyleSheet, ScrollView, Text } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useQuery } from "react-query";
-import { fetchEvents } from "../util/http";
-import EventsList from "../modules/EventsList";
+import { fetchInfo } from "../util/http";
+import InfoList from "../modules/InfoList";
 
-const Events = () => {
-  const { data, error, isLoading } = useQuery("events", fetchEvents);
+const Info = () => {
+  const { data, error, isLoading } = useQuery("info", fetchInfo);
 
   {
     isLoading && (
@@ -25,12 +25,12 @@ const Events = () => {
 
   return (
     <LinearGradient colors={["#090945", "#db5dce"]} style={styles.container}>
-      <EventsList events={data} />
+      <InfoList info={data} />
     </LinearGradient>
   );
 };
 
-export default Events;
+export default Info;
 
 const styles = StyleSheet.create({
   container: {

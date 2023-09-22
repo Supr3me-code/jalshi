@@ -10,6 +10,8 @@ import { useFonts } from "expo-font";
 import EventDetails from "./screens/EventDetails";
 import { QueryClient, QueryClientProvider } from "react-query";
 import MessageWall from "./screens/MessageWall";
+import Info from "./screens/Info";
+import InfoDetails from "./screens/InfoDetails";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -61,6 +63,17 @@ const AppOverview = () => {
           ),
         }}
       />
+      <BottomTabs.Screen
+        name="Info"
+        component={Info}
+        options={{
+          headerTitle: () => <Header title={"Information"} />,
+          tabBarLabel: "Info",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="information-circle-outline" size={size} color={color} />
+          ),
+        }}
+      />
     </BottomTabs.Navigator>
   );
 };
@@ -89,6 +102,20 @@ export default function App() {
             ></Stack.Screen>
             <Stack.Screen
               name="EventDetails"
+              component={EventDetails}
+              options={{
+                presentation: "modal",
+              }}
+            />
+            <Stack.Screen
+              name="InfoDetails"
+              component={InfoDetails}
+              options={{
+                presentation: "modal",
+              }}
+            />
+            <Stack.Screen
+              name="AddMessage"
               component={EventDetails}
               options={{
                 presentation: "modal",

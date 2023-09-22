@@ -25,7 +25,6 @@ export const fetchEvents = async () => {
 
 export const fetchMessages = async () => {
   const response = await axios.get(`${BACKEND_URL}/messages.json`);
-
   const messages = [];
 
   for (const key in response.data) {
@@ -37,4 +36,21 @@ export const fetchMessages = async () => {
     messages.push(messageObj);
   }
   return messages;
+};
+
+export const fetchInfo = async () => {
+  const response = await axios.get(`${BACKEND_URL}/info.json`);
+  const info = [];
+
+  for (const key in response.data) {
+    const infoObj = {
+      id: key,
+      title: response.data[key].title,
+      subtitle: response.data[key].subtitle,
+      imageUrl: response.data[key].imageUrl,
+      description: response.data[key].description,
+    };
+    info.push(infoObj);
+  }
+  return info;
 };
