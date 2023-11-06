@@ -2,6 +2,7 @@ import { useQuery } from "react-query";
 import { fetchInfo } from "../util/http";
 import { useLayoutEffect } from "react";
 import { Image, ScrollView, StyleSheet, View, Text } from "react-native";
+import HTML from 'react-native-render-html';
 
 const InfoDetails = ({ route, navigation }) => {
   const { data, error, isLoading } = useQuery("info", fetchInfo);
@@ -21,7 +22,7 @@ const InfoDetails = ({ route, navigation }) => {
       <Image style={styles.image} source={{ uri: infoData.imageUrl }} />
       <Text style={styles.title}>{infoData.title}</Text>
       <View style={styles.description}>
-        <Text>{infoData.description}</Text>
+        <Text><HTML source={{ html: infoData.description }} /></Text>
       </View>
     </ScrollView>
   );

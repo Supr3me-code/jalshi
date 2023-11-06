@@ -20,14 +20,13 @@ const EventDetails = ({ route, navigation }) => {
   return (
     <ScrollView style={styles.rootContainer}>
       <Image style={styles.image} source={{ uri: eventData.imageUrl }} />
-      {/* <Text style={styles.title}>{eventData.title}</Text> */}
       <View style={styles.details}>
         <IconText icon={"calendar"} text={eventData.date} />
         <IconText icon={"time"} text={eventData.time} />
         <IconText icon={"location"} text={eventData.location} />
       </View>
       <View style={styles.description}>
-        <Text>{eventData.description}</Text>
+        <Text><HTML source={{ html: eventData.description }} /></Text>
       </View>
     </ScrollView>
   );

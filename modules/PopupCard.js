@@ -4,7 +4,6 @@ import {
   Text,
   Modal,
   StyleSheet,
-  TouchableOpacity,
   Pressable,
 } from "react-native";
 import MessageForm from "../elements/MessageForm";

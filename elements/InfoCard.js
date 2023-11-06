@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, Image, Pressable, StyleSheet } from "react-native";
+import HTML from 'react-native-render-html';
 
 const InfoCard = ({ imageUrl, title, description, onPress }) => {
   return (
@@ -7,7 +8,7 @@ const InfoCard = ({ imageUrl, title, description, onPress }) => {
       <Image source={{uri: imageUrl}} style={styles.image} />
       <View style={styles.textContainer}>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.description}>{description}</Text>
+        <Text style={styles.description}><HTML source={{ html: description }} /></Text>
       </View>
     </Pressable>
   );
