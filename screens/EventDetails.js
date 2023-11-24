@@ -3,6 +3,7 @@ import { fetchEvents } from "../util/http";
 import { useLayoutEffect } from "react";
 import { Image, ScrollView, StyleSheet, View, Text } from "react-native";
 import IconText from "../elements/IconText";
+import HTML from 'react-native-render-html';
 
 const EventDetails = ({ route, navigation }) => {
   const { data, error, isLoading } = useQuery("events", fetchEvents);
