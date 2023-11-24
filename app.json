@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "jalshi",
+    "name": "Jalshi",
     "slug": "jalshi",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -15,7 +15,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.supr3mecode.jalshi"
     },
     "android": {
       "adaptiveIcon": {
