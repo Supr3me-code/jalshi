@@ -15,6 +15,11 @@ import InfoDetails from "./screens/InfoDetails";
 import AddMessage from "./screens/AddMessage";
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
+import * as Sentry from '@sentry/react-native';
+
+Sentry.init({
+  dsn: 'https://4203736f13c4bb05adb00e765ac2b9fe@o4506290101485568.ingest.sentry.io/4506290103975936',
+});
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
