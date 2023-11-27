@@ -8,7 +8,6 @@ const InfoCard = ({ imageUrl, title, description, onPress }) => {
       <Image source={{uri: imageUrl}} style={styles.image} />
       <View style={styles.textContainer}>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.description}><HTML source={{ html: description }} /></Text>
       </View>
     </Pressable>
   );
