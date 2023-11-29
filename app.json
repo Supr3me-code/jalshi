@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "jalshi",
+    "name": "Jalshi",
     "slug": "jalshi",
-    "version": "1.0.0",
+    "version": "1.0.4",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -11,13 +11,15 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.supr3mecode.jalshi",
+      "buildNumber": "1"
     },
     "android": {
+      "package": "com.supr3mecode.jalshi",
+      "versionCode": "2",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -25,6 +27,18 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e23bbbc7-556d-430f-a230-8d01360bfcbf"
+      }
+    },
+    "owner": "supr3me-code",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/e23bbbc7-556d-430f-a230-8d01360bfcbf"
     }
   }
 }
