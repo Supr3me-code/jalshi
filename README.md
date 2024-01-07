@@ -1,12 +1,12 @@
 <br/>
 <p align="center">
   <a href="">
-    <img style="border-radius: 50%" src="https://play.google.com/store/apps/details?id=com.supr3mecode.jalshi&pcampaignid=web_share" alt="Logo" width="100" height="100",style: border-radius=40>
+    <img style="border-radius: 50%" src="https://play-lh.googleusercontent.com/08lMQ-A3EqcryQmhDHuSLr_dbfH1gfJiotpYmlAEHD6ZE4SyCWgWPmHLKV6k3jDzVg=w240-h480-rw" alt="Logo" width="100" height="100",style: border-radius=40>
   </a>
 
   <h1 align="center">Jalshi</h1>
   <p align="center">
-<a href="https://play.google.com/store/apps/details?id=com.news_app.supr3me_news">PlayStore link</a>
+<a href="https://play.google.com/store/apps/details?id=com.supr3mecode.jalshi&pcampaignid=web_share">PlayStore link</a>
   <p align="center">
     A mobile app created for a client as a one-stop solution for all the information related to their wedding functions
     <br/>
